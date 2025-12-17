@@ -1,0 +1,75 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(6px);
+}
+
+/* Sticky arriba */
+.pagination.top {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #eee;
+}
+
+/* Botones */
+.pagination button {
+  min-width: 40px;
+  height: 40px;
+  padding: 0 0.75rem;
+  border-radius: 10px;
+  border: none;
+  background: #ffd90f; /* Simpson yellow */
+  color: #222;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease,
+    background 0.15s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.pagination button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  background: #ffcd00;
+}
+
+/* Botón activo */
+.pagination .active {
+  background: #222;
+  color: #ffd90f;
+}
+
+/* Deshabilitado */
+.pagination button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+/* Texto */
+.pagination span {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  padding: 0 0.5rem;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .pagination {
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .pagination button {
+    min-width: 36px;
+    height: 36px;
+    font-size: 0.85rem;
+  }
+}
