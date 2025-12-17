@@ -1,0 +1,23 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.5rem;
+  padding: 1.5rem 2rem;
+  align-items: stretch;
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .grid {
+    padding: 1.25rem 1.5rem;
+    gap: 1.25rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .grid {
+    padding: 1rem;
+    gap: 1rem;
+  }
+}

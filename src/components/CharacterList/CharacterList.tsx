@@ -3,6 +3,8 @@ import { CharacterCard } from "../CharacterCard";
 import { Pagination } from "../pagination/Pagination";
 import type { Character } from "../../types/Character";
 
+import "./CharacterList.css";
+
 export const CharacterList = () => {
   const {
     characters,
