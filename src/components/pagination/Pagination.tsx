@@ -6,6 +6,7 @@ interface Props {
   hasNext: boolean;
   hasPrev: boolean;
   onPageChange: (page: number) => void;
+  position?: "top";
 }
 
 export const Pagination = ({

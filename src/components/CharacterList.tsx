@@ -1,9 +1,10 @@
+import type { Character } from "../types/Character";
 import { useCharacters } from "../hooks/useCharacters";
-import { CharacterCard } from "./CharacterCard";
-import { Pagination } from "./pagination/Pagination";
-import './CharacterList.css'
+import {CharacterCard} from "./CharacterCard";
+import {Pagination} from "./pagination/Pagination";
+import "./CharacterList.css";
 
-export const CharacterList = () => {
+const CharacterList = () => {
   const {
     characters,
     currentPage,
@@ -15,37 +16,34 @@ export const CharacterList = () => {
     error,
   } = useCharacters();
 
-  if (loading) return <p>Cargando...</p>;
+  if (loading) return <p>Cargando personajes...</p>;
   if (error) return <p>Error: {error}</p>;
 
   return (
     <>
-      {/* 🔝 */}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
-        hasNext={!!next}
-        hasPrev={!!prev}
-        onPageChange={(page) => {
-          setCurrentPage(page);
-          window.scrollTo({ top: 0, behavior: "smooth" });
-        }}
+        hasNext={Boolean(next)}
+        hasPrev={Boolean(prev)}
+        onPageChange={setCurrentPage}
       />
 
       <div className="grid">
-        {characters.map((character) => (
+        {characters.map((character: Character) => (
           <CharacterCard key={character.id} character={character} />
         ))}
       </div>
 
-      {/* 🔽 */}
       <Pagination
         currentPage={currentPage}
         totalPages={totalPages}
-        hasNext={!!next}
-        hasPrev={!!prev}
+        hasNext={Boolean(next)}
+        hasPrev={Boolean(prev)}
         onPageChange={setCurrentPage}
       />
     </>
   );
 };
+
+export default CharacterList;

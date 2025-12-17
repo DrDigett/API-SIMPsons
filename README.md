@@ -1,73 +1,60 @@
-# React + TypeScript + Vite
+# api-simpsons
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicación SPA creada con React, TypeScript y Vite que consume una API de personajes de Los Simpson. Muestra un listado paginado de personajes usando un hook personalizado y componentes reutilizables.
 
-Currently, two official plugins are available:
+## Características
+- Listado de personajes con tarjetas responsive.
+- Paginación para navegar entre páginas de resultados.
+- Hook `useCharacters` para manejar la carga y el estado.
+- Cliente API encapsulado en `simpsonsApi`.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tecnologías
+- React
+- TypeScript
+- Vite
+- CSS (archivos por componente)
 
-## React Compiler
+## Instalación
+1. Clona el repositorio.
+2. Instala dependencias:
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+3. Levanta el servidor de desarrollo:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm run dev
 ```
+
+Abre el navegador en la dirección que muestre Vite (por defecto http://localhost:5173).
+
+## Scripts disponibles
+- `npm run dev` — Inicia el servidor de desarrollo.
+- `npm run build` — Genera la versión de producción.
+- `npm run preview` — Sirve la build de producción localmente.
+
+## Estructura principal
+- `src/api/simpsonsApi.ts` — Cliente para consumir la API de personajes.
+- `src/hooks/useCharacters.ts` — Hook para cargar y paginar personajes.
+- `src/components/CharacterList/CharacterList.tsx` — Lista paginada de personajes.
+- `src/components/CharacterCard.tsx` — Tarjeta que muestra un personaje.
+- `src/pages/Home.tsx` — Página principal donde se renderiza la lista.
+
+Puedes ver los archivos principales aquí: [src/api/simpsonsApi.ts](src/api/simpsonsApi.ts), [src/hooks/useCharacters.ts](src/hooks/useCharacters.ts), [src/components/CharacterList/CharacterList.tsx](src/components/CharacterList/CharacterList.tsx), [src/pages/Home.tsx](src/pages/Home.tsx)
+
+## Uso
+- Navega la lista de personajes y usa la paginación para ver más resultados.
+- Los componentes están preparados para extenderse (filtros, búsqueda, detalles de personaje).
+
+## Contribuciones
+1. Haz un fork.
+2. Crea una rama con tu cambio (`git checkout -b feature/mi-cambio`).
+3. Abre un Pull Request describiendo el cambio.
+
+## Licencia
+Proyecto con licencia MIT.
+
+---
+Si quieres, puedo agregar badges, ejemplos de despliegue o instrucciones para Docker/CI.
