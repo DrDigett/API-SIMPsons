@@ -53,8 +53,8 @@ Puedes ver los archivos principales aquí: [src/api/simpsonsApi.ts](src/api/simp
 2. Crea una rama con tu cambio (`git checkout -b feature/mi-cambio`).
 3. Abre un Pull Request describiendo el cambio.
 
-## Licencia
-Proyecto con licencia MIT.
+## DEPLOY:
+[https://api-sim-psons.vercel.app/](https://api-sim-psons.vercel.app/)
 
 ---
 Si quieres, puedo agregar badges, ejemplos de despliegue o instrucciones para Docker/CI.
