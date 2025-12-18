@@ -1,6 +1,6 @@
 import type { PaginatedResponse } from "../types/PaginatedResponse";
 
-const API_BASE = "https://thesimpsonsapi.com/api/characters";
+export const API_BASE = "https://thesimpsonsapi.com/api/characters";
 export const IMAGE_BASE_URL = "https://cdn.thesimpsonsapi.com/500";
 
 export const fetchCharacters = async (
