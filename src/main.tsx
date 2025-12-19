@@ -1,15 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import App from "./App";
 import "./App.css";
 import { Layout } from "./components/layout/layout";
-import logo from "./assets/react.svg";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <link rel="icon" type="image/svg+xml" href={logo} />
-    <Layout>
-      <App/>
-    </Layout>  
+    <BrowserRouter>
+      <Layout>
+        <App />
+      </Layout>
+    </BrowserRouter>
   </React.StrictMode>
 );

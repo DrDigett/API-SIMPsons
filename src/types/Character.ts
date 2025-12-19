@@ -1,8 +1,11 @@
 export interface Character {
   id: number;
   name: string;
-  age : string;
-  portrait_path: string;
+  age: number;
+  birthdate: string;
+  gender: string;
   occupation: string;
-  status?: string;
+  portrait_path: string;
+  phrases: string[];
+  status: string;
 }

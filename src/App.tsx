@@ -1,9 +1,13 @@
+import { Routes, Route } from "react-router-dom";
 import { Home } from "./pages/Home";
-import './App.css'
+import { CharacterDetail } from "./pages/CharacterDetail";
 
 function App() {
-  return(
-      <Home/>
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/character/:id" element={<CharacterDetail />} />
+    </Routes>
   );
 }
 

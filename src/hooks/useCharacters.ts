@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { fetchCharacters } from "../api/simpsonsApi";
 import type { Character } from "../types/Character";
+import { fetchCharacters } from "../api/simpsonsApi";
 
 export const useCharacters = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
